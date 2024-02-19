@@ -1,0 +1,13 @@
+<p mat-h1>Rendering a single child component multiple times with distinct inputs.</p>
+
+<button mat-raised-button color="accent" (click)="sortByGrade()">Sort by grade</button> &nbsp; &nbsp;
+<button mat-raised-button color="accent" (click)="changeStudentName()">Change student name</button> &nbsp; &nbsp;
+
+<br><br>
+
+@for (c of competitors; track c; let i = $index, o = $odd) {
+    <div [ngClass]="o ? 'even-row': ''">
+        Student {{ i + 1 }} <app-child [competitor]="c" />
+    </div>
+}
+

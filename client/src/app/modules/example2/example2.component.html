@@ -1,0 +1,7 @@
+<p>example2 works!</p>
+
+<button mat-raised-button color="accent" (click)="displayComponentData()">Show components</button> <br><br>
+
+@for (c of componentData; track c; let i = $index) {
+    <ng-template *ngComponentOutlet="c.component; inputs: c.data" /> <br><br>
+}
